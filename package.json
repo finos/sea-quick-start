@@ -1,0 +1,29 @@
+{
+  "name": "@chartiq/sea-quick-start",
+  "version": "0.0.1",
+  "description": "Quick start sample project for the ChartIQ's Secure Electron Adapter (SEA)",
+  "main": "index.js",
+  "scripts": {
+    "serve": "serve -l 3375 public",
+    "start2": "electron --inspect=5858 index.js --manifest http://localhost:3375/manifest-local.json",
+    "start": "node index.js http://localhost:3375/manifest-local.json",
+    "start3": "npm run serve & npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.chartiq.com/chartiq/sea-quick-start.git"
+  },
+  "keywords": [
+    "ChartIQ",
+    "secure",
+    "electron",
+    "example"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@chartiq/secure-electron-adapter": "file:chartiq-secure-electron-adapter-4.0.2.tgz",
+    "serve": "^11.3.0"
+  }
+}
