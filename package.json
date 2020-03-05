@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "serve -l 3375 public",
-    "start2": "electron --inspect=5858 index.js --manifest http://localhost:3375/manifest-local.json",
-    "start": "node index.js http://localhost:3375/manifest-local.json",
-    "start3": "npm run serve & npm run start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:index": "node index.js --manifest http://localhost:3375/manifest-local.json",
+    "start": "run-p serve start:index",
   },
   "repository": {
     "type": "git",
@@ -23,7 +21,8 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@chartiq/secure-electron-adapter": "file:chartiq-secure-electron-adapter-4.0.2.tgz",
+    "@chartiq/secure-electron-adapter": "chartiq-secure-electron-adapter-4.0.2.tgz",
+    "npm-run-all": "^4.1.5",
     "serve": "^11.3.0"
   }
 }
