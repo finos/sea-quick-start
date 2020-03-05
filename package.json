@@ -19,7 +19,7 @@
     "electron",
     "example"
   ],
-  "author": "",
+  "author": "ChartIQ",
   "license": "Apache-2.0",
   "dependencies": {
     "@chartiq/secure-electron-adapter": "chartiq-secure-electron-adapter-4.0.2.tgz",
