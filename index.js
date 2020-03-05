@@ -1,16 +1,35 @@
-const path = require('path')
+const program = require('commander');
+const commaSeparatedList = (list) => list.split(',');
+program
+    .option('--manifest <manifest>', 'manifest location for secure electron adapter')
+    .option('--chromium-flags <chromium-flags>', 'comma separated flags for chromium', commaSeparatedList);
+
+program.parse(process.argv);
+
+const path = require('path');
 const SEA = require("@chartiq/secure-electron-adapter/exports");
 const FEA_PATH = path.join(__dirname, "node_modules", "@chartiq", "secure-electron-adapter");
-const chromiumFlags = {
-    //remoteDebuggingPort: 9222
+let chromiumFlags = {};
+if (program.chromiumFlags) {
+    program.chromiumFlags.forEach(flag => {
+        let pair = flag.split(":");
+        chromiumFlags[pair[0]] = pair[1];
+    });
 }
+let manifest;
+if (program.manifest) {
+    manifest = program.manifest;
+} else {
+    manifest = 'http://localhost:3375/manifest-local.json';
+}
+
 
 const onLaunched = () => {
     console.log('Secure Electron Adapter Launched.')
 }
 
 const config = {
-        manifest: 'http://localhost:3375/manifest-local.json',
+        manifest: manifest,
         onElectronClose: process.exit,
         chromiumFlags: JSON.stringify(chromiumFlags),
         path: FEA_PATH,
