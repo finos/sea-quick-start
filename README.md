@@ -10,6 +10,12 @@ A basic Electron application using the secure-electron-adapter needs just these 
 - `package.json` - Points to the app's main file and lists its details and dependencies.
 - `index.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
 - `index.html` - A web page to render. This is the app's **renderer process**.
+- `manifest-local.json` - A manifest that determines:
+  - The application name
+  - The application URL
+    - Typically points to your app's renderer process
+  - File that can be preloaded
+  - Files that are considered trusted preloads
 
 ## To Use
 
