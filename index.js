@@ -8,7 +8,7 @@ program.parse(process.argv);
 
 const path = require('path');
 const SEA = require("@chartiq/secure-electron-adapter/exports");
-const FEA_PATH = path.join(__dirname, "node_modules", "@chartiq", "secure-electron-adapter");
+const SEA_PATH = path.join(__dirname, "node_modules", "@chartiq", "secure-electron-adapter");
 let chromiumFlags = {};
 if (program.chromiumFlags) {
     program.chromiumFlags.forEach(flag => {
@@ -32,7 +32,7 @@ const config = {
         manifest: manifest,
         onElectronClose: process.exit,
         chromiumFlags: JSON.stringify(chromiumFlags),
-        path: FEA_PATH,
+        path: SEA_PATH,
 }
 
 SEA.e2oLauncher(config, onLaunched)
