@@ -6,8 +6,8 @@
 // process.
 window.addEventListener('DOMContentLoaded', () => {
     console.log('hello world from renderer!');
-    // fin.desktop.System.currentWindow.openDevTools();
-    let _window = fin.desktop.Application.getCurrent();
+    // sea.desktop.System.currentWindow.openDevTools();
+    let _window = sea.WindowProcess.getCurrent();
     const replaceText = (selector, text) => {
       const element = document.getElementById(selector)
       if (element) element.innerText = text;
