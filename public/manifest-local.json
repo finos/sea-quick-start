@@ -1,13 +1,10 @@
 {
-    "startup_app": {
+    "main": {
         "name": "test",
         "url": "http://localhost:3375/index.html",
         "uuid": "Secure Electron Adapter",
-        "autoShow": true,
+        "visible": true,
         "preload": "http://localhost:3375/preload.js"
-    },
-    "runtime": {
-        "electron": "4.1.5"
     },
     "electronAdapter": {
         "trustedPreloads": ["http://localhost:3375/preload.js"]

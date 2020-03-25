@@ -35,4 +35,4 @@ const config = {
         path: SEA_PATH,
 }
 
-SEA.e2oLauncher(config, onLaunched)
+SEA.seaLauncher(config, onLaunched)

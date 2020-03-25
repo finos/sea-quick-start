@@ -6,7 +6,6 @@
 // process.
 window.addEventListener('DOMContentLoaded', () => {
     console.log('hello world from renderer!');
-    // sea.desktop.System.currentWindow.openDevTools();
     let _window = sea.WindowProcess.getCurrent();
     const replaceText = (selector, text) => {
       const element = document.getElementById(selector)
