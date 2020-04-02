@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <p>
-      Our application is called <span id="application-name"></span>.
-    </p>
-    <p>
-      We are using Node.js <span id="node-version"></span>,
-      Chromium <span id="chrome-version"></span>,
-      and Electron <span id="electron-version"></span>.
-    </p>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  <h2>System</h2>
+  <p>
+    <h3>Version Info</h3>
+  <p>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+  </p>
+  <h3>Monitor Info</h3>
+  <p>
+    Number of monitors: <span id="monitor-count"></span>
+  </p>
+  <p>
+    Primary display resolution: <span id="primary-resolution"></span>
+  </p>
+  <h2>WindowProcess</h2>
+  <p>
+    Our application is called <span id="application-name"></span>.
+  </p>
+  <h2>Window</h2>
+  <p>
+    This window's current bounds: <span id="current-bounds"></span>.
+  </p>
+  <p>
+    <a id="move-left" href="#">Move Window Left</a> | 
+    <a id="move-right" href="#">Move Window Right</a> |
+    <a id="open-new" href="#">Open New Window</a> | 
+  </p>
+  <script src="./renderer.js"></script>
+</body>
+
 </html>

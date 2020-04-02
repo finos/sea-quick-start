@@ -4,7 +4,7 @@
   "description": "Quick start sample project for the ChartIQ's Secure Electron Adapter (SEA)",
   "main": "index.js",
   "scripts": {
-    "serve": "serve -l 3375 public",
+    "serve": "serve -l 3375 -c ../serve.json public",
     "start:index": "node index.js --manifest http://localhost:3375/manifest-local.json",
     "start": "run-p serve start:index",
     "help": "node index.js --help"
