@@ -19,7 +19,6 @@ const newWindow = () => {
 }
 
 const loadInfo = () => {
-    console.log('hello world from renderer!');
 
   window.currentWindow = sea.getCurrentWindow();
   
@@ -47,6 +46,8 @@ const loadInfo = () => {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+
+  console.log('hello world from renderer!');
 
   const moveLeft = document.getElementById('move-left');
   moveLeft.onclick = () => moveWindow(-50);
