@@ -55,9 +55,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const moveRight = document.getElementById('move-right');
   moveRight.onclick = () => moveWindow(50);
   
-  const openNew = document.getElementById('open-new');
-  openNew.onclick = () => newWindow();
-
   loadInfo();
   
 });
