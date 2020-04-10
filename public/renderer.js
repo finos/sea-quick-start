@@ -14,10 +14,6 @@ const moveWindow = (x) => {
   });
 }
 
-const newWindow = () => {
-  
-}
-
 const loadInfo = () => {
 
   window.currentWindow = sea.getCurrentWindow();
@@ -45,7 +41,8 @@ const loadInfo = () => {
 
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+
+window.sea.onLoad(()=>{
 
   console.log('hello world from renderer!');
 
