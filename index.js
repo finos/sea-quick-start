@@ -25,14 +25,14 @@ if (program.manifest) {
 
 
 const onLaunched = () => {
-    console.log('Secure Electron Adapter Launched.')
-}
+    console.log('Secure Electron Adapter Launched.');
+};
 
 const config = {
         manifest: manifest,
         onElectronClose: process.exit,
         chromiumFlags: JSON.stringify(chromiumFlags),
         path: SEA_PATH,
-}
+};
 
-SEA.seaLauncher(config, onLaunched)
+SEA.seaLauncher(config, onLaunched);
