@@ -23,12 +23,12 @@ const loadInfo = () => {
     for (const type of ['chrome', 'node', 'electron']) {
       replaceText(`${type}-version`, versions[type]);
     }
-  })
+  });
 
   sea.System.getMonitorInfo(monitorInfo => {
     replaceText(`monitor-count`, monitorInfo.allDisplays.length)
     replaceText(`primary-resolution`, `${monitorInfo.primaryDisplay.size.width}x${monitorInfo.primaryDisplay.size.height}`)
-  })
+  });
 
   // WindowProcess
   let winProc = sea.getCurrentWindowProcess();
