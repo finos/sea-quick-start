@@ -1,5 +1,3 @@
-Badges go here (see [shields.io](https://shields.io/), for examples).
-
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
 # sea-quick-start
