@@ -5,8 +5,17 @@
 // selectively enable features needed in the rendering
 // process.
 
+const launchWindow = (event, args) => {
+  let winProc = sea.getCurrentWindowProcess();
+  winProc.getManifest((manifest)=> {
+    const childWin = sea.launchWindow(manifest.childWindow, (...args)=>{
+      console.log(`childWin cb ${args}`)    
+    });
+    console.log(`childWin ${childWin}`)
+  })
+}
+
 const moveWindow = (x) => {
-  
   currentWindow.getBounds((bounds)=>{
     const newLeft = bounds.x + x;
     currentWindow.setBounds(newLeft, bounds.y, bounds.width, bounds.height);
@@ -41,16 +50,20 @@ const loadInfo = () => {
 
 }
 
+console.log('hello world from renderer!');
 
 window.sea.onLoad(()=>{
 
-  console.log('hello world from renderer!');
+  console.log('SEA has been loaded');
 
   const moveLeft = document.getElementById('move-left');
   moveLeft.onclick = () => moveWindow(-50);
   
   const moveRight = document.getElementById('move-right');
   moveRight.onclick = () => moveWindow(50);
+
+  const newWindow = document.getElementById('new-window');
+  newWindow.onclick = launchWindow;
   
   loadInfo();
   

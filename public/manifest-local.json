@@ -2,7 +2,13 @@
     "main": {
         "name": "test",
         "url": "http://localhost:3375/index.html",
-        "url2": "https://github.com",
+        "uuid": "Secure Electron Adapter",
+        "visible": true,
+        "preload": "http://localhost:3375/preload.js"
+    },
+    "childWindow": {
+        "name": "childWindow",
+        "url": "http://localhost:3375/childWindow.html",
         "uuid": "Secure Electron Adapter",
         "visible": true,
         "preload": "http://localhost:3375/preload.js"

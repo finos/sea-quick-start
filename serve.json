@@ -2,7 +2,7 @@
     "public": "",
     "headers": [
         {
-            "source" : "**/index.html",
+            "source" : "**/*.html",
             "headers": [
                 {
                     "key": "Content-Security-Policy",
