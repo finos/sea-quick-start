@@ -1,19 +1,42 @@
 {
     "main": {
-        "name": "test",
+        "name": "MainWindow",
         "url": "http://localhost:3375/index.html",
         "uuid": "Secure Electron Adapter",
         "visible": true,
         "preload": "http://localhost:3375/preload.js"
     },
-    "childWindow": {
-        "name": "childWindow",
-        "url": "http://localhost:3375/childWindow.html",
-        "uuid": "Secure Electron Adapter",
-        "visible": true,
-        "preload": "http://localhost:3375/preload.js"
+    "applications": {
+        "childWindow": {
+            "name": "TrustedChild",
+            "url": "http://localhost:3375/index.html",
+            "uuid": "Secure Electron Adapter",
+            "visible": true,
+            "preload": "http://localhost:3375/preload.js"
+        },
+        "untrustedChild": {
+            "name": "UntrustedChild",
+            "url": "http://localhost:3375/index.html",
+            "uuid": "Secure Electron Adapter",
+            "visible": true,
+            "preload": "http://localhost:3375/preload.js",
+            "permissions": {
+                "System": {
+                    "clearCache": false,
+                    "exit": false
+                },
+                "Window": {
+                    "executeJavaScript": false,
+                    "webPreferences": {
+                        "preload": false
+                    }
+                }
+            }
+        }
     },
     "electronAdapter": {
-        "trustedPreloads": ["http://localhost:3375/preload.js"]
+        "trustedPreloads": [
+            "http://localhost:3375/preload.js"
+        ]
     }
 }

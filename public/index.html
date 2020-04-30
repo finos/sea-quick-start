@@ -8,8 +8,7 @@
 </head>
 
 <body>
-  <h1>Hello World!</h1>
-  <h2>System</h2>
+  <h1>Hello World from <span id="window-name"></span>!</h1>
   <p>
     <h3>Version Info</h3>
   <p>
@@ -37,9 +36,12 @@
     <button id="move-right" href="#">Move Window Right</button>
   </p>
   <p>
-    <button id="new-window" href="#">Launch child window</button>
+    <button id="new-window-trusted" href="#">Launch trusted application</button> |
+    <button id="new-window-untrusted" href="#">Launch untrusted application</button>
   </p>
-
+  <p>
+    <button id="exit-app" href="#">Exit Application</button>
+  </p>
   <script src="./renderer.js"></script>
 </body>
 

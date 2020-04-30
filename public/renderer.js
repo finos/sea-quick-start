@@ -5,10 +5,11 @@
 // selectively enable features needed in the rendering
 // process.
 
-const launchWindow = (event, args) => {
+const launchWindow = (appName) => {
   let winProc = sea.getCurrentWindowProcess();
   winProc.getManifest((manifest)=> {
-    const childWin = sea.launchWindow(manifest.childWindow, (...args)=>{
+    const appConfig = manifest.applications[appName];
+    const childWin = sea.launchWindow(appConfig, (...args)=>{
       console.log(`childWin cb ${args}`)    
     });
     console.log(`childWin ${childWin}`)
@@ -26,6 +27,9 @@ const moveWindow = (x) => {
 const loadInfo = () => {
 
   window.currentWindow = sea.getCurrentWindow();
+
+  // Window name
+  replaceText(`window-name`, window.currentWindow.name);
   
   // System
   window.sea.System.getVersion(versions => {
@@ -62,9 +66,15 @@ window.sea.onLoad(()=>{
   const moveRight = document.getElementById('move-right');
   moveRight.onclick = () => moveWindow(50);
 
-  const newWindow = document.getElementById('new-window');
-  newWindow.onclick = launchWindow;
+  const newWindowTrusted = document.getElementById('new-window-trusted');
+  newWindowTrusted.onclick = () => launchWindow('childWindow');
   
+  const newWindowUntrusted = document.getElementById('new-window-untrusted');
+  newWindowUntrusted.onclick = () => launchWindow('untrustedChild');
+
+  const exitApp = document.getElementById('exit-app');
+  exitApp.onclick = () => sea.System.exit();
+    
   loadInfo();
   
 });

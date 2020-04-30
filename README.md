@@ -18,6 +18,15 @@ A basic Electron application using the secure-electron-adapter needs just these 
     - Typically points to your app's renderer process
   - File that can be preloaded
   - Files that are considered trusted preloads
+  - Anything you need, including a list of configurations for Applications!
+
+## Overview
+
+Within the `public` directory, the SEA manifest `manifest-local.json` is passed to SEA within `index.js` and describes the following:
+ - `main`: The main application entry point.  Here, all applications point to `index.html` served locally using a node-based http server.  A `preload` is specified to add a function on the `window` object.
+ - `applications`: two additional application configs, differing in name and permissions.  For brevity, all applications load `index.html`.
+  - `TrustedChild`: A child window with full permissions
+  - `UntrustedChild`: A child window with some permissions removed, including `System.exit()`.  Clicking the `Exit Applicaton` button on this window will result in an access denied warning logged to the console.
 
 ## To Use
 
