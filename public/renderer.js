@@ -8,7 +8,7 @@
 const launchWindow = (appName) => {
   let winProc = sea.getCurrentWindowProcess();
   winProc.getManifest((manifest)=> {
-    const appConfig = manifest.applications[appName];
+    const appConfig = manifest.components[appName];
     const childWin = sea.launchWindow(appConfig, (...args)=>{
       console.log(`childWin cb ${args}`)    
     });
