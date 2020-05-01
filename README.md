@@ -34,9 +34,14 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/ChartIQ/sea-quick-start
-# Go into the repository
-cd sea-quick-start
+git clone https://github.com/finos/sea-quick-start
+# Clone the secure-electron-adapter repository (which is not yet available via NPM)
+git clone https://github.com/finos/secure-electron-adapter
+#build SEA
+cd secure-electron-adapter
+npm install
+# Go into the quick start repository
+cd ../sea-quick-start
 # Install dependencies
 npm install
 # Run the app
