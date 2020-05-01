@@ -16,8 +16,17 @@ A basic Electron application using the secure-electron-adapter needs just these 
   - The application name
   - The application URL
     - Typically points to your app's renderer process
-  - File that can be preloaded
-  - Files that are considered trusted preloads
+  - URL path of a file that can be preloaded.  An array of paths is also accepted.
+  - Files that are considered trusted preloads across the application.
+  - Anything else you need, including a list of configurations for components.
+
+## Overview
+
+Within the `public` directory, the SEA manifest `manifest-local.json` is passed to SEA within `index.js` and describes the following:
+ - `main`: The main application entry point.  Here, all components point to `index.html` served locally using a node-based http server.  A `preload` is specified to add a function on the `window` object.
+ - `components`: two additional component configs, differing in name and permissions.  For brevity, all components load `index.html`.
+  - `TrustedChild`: A child window with full permissions
+  - `UntrustedChild`: A child window with some permissions removed, including `System.exit()`.  Clicking the `Exit Applicaton` button on this window will result in an access denied warning logged to the console.
 
 ## To Use
 
@@ -25,9 +34,14 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/ChartIQ/sea-quick-start
-# Go into the repository
-cd sea-quick-start
+git clone https://github.com/finos/sea-quick-start
+# Clone the secure-electron-adapter repository (which is not yet available via NPM)
+git clone https://github.com/finos/secure-electron-adapter
+#build SEA
+cd secure-electron-adapter
+npm install
+# Go into the quick start repository
+cd ../sea-quick-start
 # Install dependencies
 npm install
 # Run the app
