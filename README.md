@@ -1,5 +1,6 @@
 [![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
 
+[![SEA Logo](https://sea.finos.org/img/sea-horizontal-logo.svg)](https://sea.finos.org)
 # sea-quick-start
 
 **Clone and run for a quick way to see the secure-electron-adapter in action.**
